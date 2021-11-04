@@ -66,7 +66,7 @@ export default function WeatherApp(props) {
         <footer>
           <a
             className="footer"
-            href="https://github.com/Halehkm/weather-react"
+            href="https://github.com/Halehkm/react-weather-project"
             target="blank"
           >
             Open-source code
