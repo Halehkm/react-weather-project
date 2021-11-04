@@ -1,0 +1,156 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(..//src/img/weather-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+#root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #27296d;
+  font-family: "Adamina", serif;
+  min-height: 100vh;
+}
+ul {
+  list-style-type: none;
+}
+footer {
+  position: relative;
+  font-size: 10px;
+  top: 230px;
+  left: 250px;
+}
+.footer {
+  text-decoration: none;
+  color: #27296d;
+}
+a .footer:hover {
+  text-decoration: underline;
+}
+.forecast {
+  position: relative;
+  left: 315px;
+  top: 6px;
+  border: solid 1px;
+  border-radius: 10px 100px / 120px;
+  max-width: 126px;
+  max-height: 55px;
+  font-size: 12px;
+  padding: 15px 20px;
+  box-shadow: 2px 2px #74ebd5, -0.3em 0 0.4em #fcdad9;
+  line-height: 2px;
+  margin-bottom: 10px;
+}
+
+.container {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 2px #fcdad9;
+}
+
+.search-box {
+  margin-left: 130px;
+  width: 254px;
+  margin-top: 78px;
+  border-radius: 5px;
+  border: solid 1px #27296d;
+  padding: 5px 10px;
+  font-size: small;
+  background-color: #fcdad9;
+}
+.search-btn,
+.currentLocation-btn {
+  margin-top: 78px;
+  border-radius: 4px;
+  font-size: small;
+  padding: 5px 10px;
+  color: #27296d;
+  border: solid 1px #27296d;
+  background-color: #fcdad9;
+}
+.city {
+  position: relative;
+  left: 48px;
+  font-size: 38px;
+  text-transform: capitalize;
+  margin-top: 100px;
+
+}
+.temp {
+  position: relative;
+  font-size: 38px;
+  margin-top: 100px;
+  left: 23px;
+}
+.units {
+  font-size: small;
+  position: absolute;
+  top: 10px;
+  left: 80px;
+}
+.current-date {
+  position: relative;
+  top: 21px;
+  left: 100px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.temp-details {
+  position: relative;
+  left: 458px;
+  bottom: 68px;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.weather-icon {
+  position: relative;
+  top: 227px;
+  width: 140px;
+  height: 140;
+  left: 37px;
+}
+.active {
+  color: #27296d;
+  text-decoration: none;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}
+
+.day-1 {
+  top: 302px;
+  left: -168px;
+}
+.day-2 {
+  top: 305px;
+  left: -86px;
+}
+.day-3 {
+  top: 305px;
+  left: 20px;
+}
+.day-4 {
+  top: 238px;
+  left: 149px;
+}
+.day-5 {
+  top: 109px;
+  left: 240px;
+}
+.day-6 {
+  top: -25px;
+  left: 325px;
+}
