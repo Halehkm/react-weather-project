@@ -59,7 +59,7 @@ a .footer:hover {
 }
 
 .search-box {
-  margin-left: 130px;
+  margin-left: 158px;
   width: 254px;
   margin-top: 78px;
   border-radius: 5px;
@@ -78,15 +78,14 @@ a .footer:hover {
   border: solid 1px #27296d;
   background-color: #fcdad9;
 }
-.city {
+.WeatherInfo .city {
   position: relative;
   left: 48px;
   font-size: 38px;
   text-transform: capitalize;
   margin-top: 100px;
-
 }
-.temp {
+.WeatherInfo .temp {
   position: relative;
   font-size: 38px;
   margin-top: 100px;
@@ -106,7 +105,7 @@ a .footer:hover {
   line-height: 1.75;
 }
 
-.temp-details {
+.WeatherInfo .temp-details {
   position: relative;
   left: 458px;
   bottom: 68px;
