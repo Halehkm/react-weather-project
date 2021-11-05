@@ -88,14 +88,14 @@ a .footer:hover {
 .WeatherInfo .temp {
   position: relative;
   font-size: 38px;
-  margin-top: 100px;
-  left: 23px;
+  margin-top: -64px;
+  left: 251px;
 }
-.units {
+.UnitConv .units {
   font-size: small;
   position: absolute;
-  top: 10px;
-  left: 80px;
+  top: 201px;
+  left: 560px;
 }
 .current-date {
   position: relative;
@@ -115,10 +115,10 @@ a .footer:hover {
 
 .weather-icon {
   position: relative;
-  top: 227px;
+  top: 253px;
   width: 140px;
   height: 140;
-  left: 37px;
+  left: -80px;
 }
 .active {
   color: #27296d;

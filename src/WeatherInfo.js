@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import UnitConv from "./UnitConv";
 /* import Time from "./Time"; */
 
 export default function WeatherInfo(props) {
@@ -14,18 +15,8 @@ export default function WeatherInfo(props) {
             alt={props.data.description}
           />
         </div>
-        <div className="col-sm temp">
-          <span className="temp">{props.data.temp}</span>
-          <span className="units">
-            {(
-              <a href="/" className="active">
-                °F
-              </a>
-            ) | <a href="/">°C</a>}
-          </span>
-        </div>
-
         {/* <Time city="chicago"/> */}
+        <UnitConv fahrenheit={props.data.temp} />
         <FormattedDate date={props.data.date} />
         <div className="col-6 ">
           <ul className="temp-details">
