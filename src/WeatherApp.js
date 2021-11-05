@@ -4,8 +4,8 @@ import WeatherInfo from "./WeatherInfo";
 
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(props.defaultCity);
-
+  /*   const [city, setCity] = useState(props.defaultCity);
+   */
   function weatherDetail(response) {
     setWeatherData({
       ready: true,
@@ -15,12 +15,13 @@ export default function WeatherApp(props) {
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
   function search() {
     const apiKey = `44d7b9ac8fa1b37377621f35fc9ba5f1`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(weatherDetail);
   }
 
@@ -30,7 +31,7 @@ export default function WeatherApp(props) {
   }
 
   function handleCityChange(event) {
-    setCity(event.target.value);
+    props.setCity(event.target.value);
   }
 
   if (weatherData.ready) {

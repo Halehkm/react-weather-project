@@ -1,5 +1,6 @@
 import React from "react";
-import Date from "./Date";
+import FormattedDate from "./FormattedDate";
+/* import Time from "./Time"; */
 
 export default function WeatherInfo(props) {
   return (
@@ -24,7 +25,8 @@ export default function WeatherInfo(props) {
           </span>
         </div>
 
-        <Date />
+        {/* <Time city="chicago"/> */}
+        <FormattedDate date={props.data.date} />
         <div className="col-6 ">
           <ul className="temp-details">
             <li className="temp-desc text-capitalize">
