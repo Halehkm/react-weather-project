@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -16,6 +17,7 @@ export default function WeatherApp(props) {
       wind: Math.round(response.data.wind.speed),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
 
@@ -49,7 +51,12 @@ export default function WeatherApp(props) {
             {/* <input className="currentLocation-btn" type="submit" value="Now" /> */}
           </form>
         </div>
+
         <WeatherInfo data={weatherData} />
+        <WeatherForecast
+          data={weatherData}
+          coordinates={weatherData.coordinates}
+        />
         <footer>
           <a
             className="footer"
