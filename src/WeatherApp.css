@@ -46,7 +46,7 @@ a .footer:hover {
   font-size: 12px;
   padding: 15px 20px;
   box-shadow: 2px 2px #74ebd5, -0.3em 0 0.4em #fcdad9;
-  line-height: 2px;
+  line-height: 15px;
   margin-bottom: 10px;
 }
 
