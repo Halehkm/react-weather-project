@@ -44,9 +44,7 @@ a .footer:hover {
   max-width: 126px;
   max-height: 55px;
   font-size: 12px;
-  padding: 0px 20px;
   box-shadow: 2px 2px #74ebd5, -0.3em 0 0.4em #fcdad9;
-  line-height: 15px;
   margin-bottom: 10px;
 }
 
