@@ -11,14 +11,13 @@ export default function WeatherForecastDay(props) {
 
   return (
     <ul className="WeatherForecastDay">
-      <li className= "forecast day-1">
+      <li>
         <div>{day()}</div>
         {Math.round(props.data.temp.day)}°F{" "}
         <img
-          className="forecasticon"
           src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
           alt=""
-          width="30"
+          width="45"
         />
       </li>
     </ul>

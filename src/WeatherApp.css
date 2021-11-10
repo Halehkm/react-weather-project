@@ -25,7 +25,7 @@ ul {
 footer {
   position: relative;
   font-size: 10px;
-  top: 87px;
+  top: -160px;
   left: 250px;
 }
 .footer {
@@ -50,7 +50,6 @@ a .footer:hover {
   margin-bottom: 10px;
 }
 
-
 .container {
   position: absolute;
   width: 700px;
@@ -69,8 +68,7 @@ a .footer:hover {
   font-size: small;
   background-color: #fcdad9;
 }
-.search-btn,
-.currentLocation-btn {
+.search-btn {
   margin-top: 78px;
   border-radius: 4px;
   font-size: small;
@@ -130,27 +128,27 @@ a .footer:hover {
   text-decoration: none;
 }
 
+.day-0 {
+  top: 20px;
+  left: 27px;
+}
 .day-1 {
-  top: 302px;
-  left: -168px;
+  top: 23px;
+  left: 87px;
 }
 .day-2 {
-  top: 305px;
-  left: -86px;
+  top: 24px;
+  left: 191px;
 }
 .day-3 {
-  top: 305px;
-  left: 20px;
+  top: -37px;
+  left: 329px;
 }
 .day-4 {
-  top: 238px;
-  left: 149px;
+  top: -154px;
+  left: 451px;
 }
 .day-5 {
-  top: 109px;
-  left: 240px;
-}
-.day-6 {
-  top: -25px;
-  left: 325px;
+  top: -296px;
+  left: 503px;
 }
