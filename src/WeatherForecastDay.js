@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WeatherForecastDay(props) {
   function day() {
-    let date = new Date(props.data.day);
+    let date = new Date(props.data.dt * 1000);
     let day = date.getDay();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -13,7 +13,11 @@ export default function WeatherForecastDay(props) {
     <ul className="WeatherForecastDay">
       <li className="forecast day-1">
         <div>{day()}</div>
-        {props.data.temp}°F <img src={props.data.icon} alt="" />
+        {Math.round(props.data.temp.day)}°F{" "}
+        <img
+          src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+          alt=""
+        />
       </li>
       {/*  <li className="forecast day-2">
           <div>Sun</div>
