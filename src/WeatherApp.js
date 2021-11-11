@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherApp(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
-  /*   const [city, setCity] = useState(props.defaultCity);
-   */
+  const [weatherData, setWeatherData] = useState({});
+
+  useEffect(() => {
+    const apiKey = `44d7b9ac8fa1b37377621f35fc9ba5f1`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(weatherDetail);
+  }, [props.city]);
+
   function weatherDetail(response) {
     setWeatherData({
       ready: true,
@@ -21,55 +26,46 @@ export default function WeatherApp(props) {
     });
   }
 
-  function search() {
-    const apiKey = `44d7b9ac8fa1b37377621f35fc9ba5f1`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(weatherDetail);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
-    search();
   }
 
   function handleCityChange(event) {
     props.setCity(event.target.value);
   }
 
-  if (weatherData.ready) {
-    return (
-      <div className="row">
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input
-              className="search-box"
-              type="text"
-              placeholder="Enter city"
-              onChange={handleCityChange}
-            />
-            <input className="search-btn" type="submit" value="Search ☀" />
-          </form>
-        </div>
+  return (
+    <div className="row">
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            className="search-box"
+            type="text"
+            placeholder="Enter city"
+            onChange={handleCityChange}
+          />
+          <input className="search-btn" type="submit" value="Search ☀" />
+        </form>
+      </div>
 
-        <WeatherInfo data={weatherData} />
+      <WeatherInfo data={weatherData} />
+      {weatherData.coordinates && (
         <WeatherForecast
           data={weatherData}
           coordinates={weatherData.coordinates}
         />
-        <footer>
-          <a
-            className="footer"
-            href="https://github.com/Halehkm/react-weather-project"
-            target="blank"
-          >
-            Open-source code
-          </a>{" "}
-          by Haleh Motlagh
-        </footer>
-      </div>
-    );
-  } else {
-    search();
-    return "Loading...";
-  }
+      )}
+
+      <footer>
+        <a
+          className="footer"
+          href="https://github.com/Halehkm/react-weather-project"
+          target="blank"
+        >
+          Open-source code
+        </a>{" "}
+        by Haleh Motlagh
+      </footer>
+    </div>
+  );
 }
